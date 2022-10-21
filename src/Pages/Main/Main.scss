@@ -1,0 +1,63 @@
+@import '../../index.scss';
+
+
+.content {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.05);
+    min-height: 100vh;
+    z-index: 99;
+    .content-body {
+        padding: 10px;
+    }
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content-top {
+    margin-bottom: 16px;
+    font-weight: 600;
+    padding: 20px 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bg-second;
+    border-top: 4px solid $border-color; 
+    gap: 1rem;
+    .content-select {
+        width: 20rem;
+        background-color: #fff;
+        .ant-select-selector {
+            width: 100%!important;
+        }
+    } 
+
+    .content-top__input {
+        border: none;
+        cursor: pointer;
+        color: #000;
+        * {
+         border: none
+        }
+    }
+
+    .content-top__input[type = "text"]{
+        padding: 0 5px;
+    }
+
+    .flex{
+        display: flex;
+        gap: 1rem;
+    }
+
+    
+}
+
+.table-image {
+    height: 40px;
+    padding: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0,0,0,.05);
+}
