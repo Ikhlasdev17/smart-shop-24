@@ -359,5 +359,13 @@
     "production__process": "Islep shig'ariw procesi",
     "production__history": "Islep shig'ariw tariyxi",
     "faqat_ishlab_chiqarish_mumkin": "Iltimas!, tek g'ana islep shig'ariw mu'mkin bolg'an o'nimlerdi qaldirin'!",
-    "process__end": "Processdi tawisiwdi qaleyiszbe?"
+    "process__end": "Processdi tawisiwdi qaleyiszbe?",
+    "branches":"Filiallar",
+    "branch":"Filial",
+    "select_branch":"Filialdi saylań",
+    "create_branch":"Filial jaratiw",
+    "update_branch":"Filialdi jan'alaw",
+    "branch_name":"Filial ati",
+    "main_branch":"Tiykarg'i filial",
+    "already_branch":"Bunday filial jaratilg'an!"
 }
