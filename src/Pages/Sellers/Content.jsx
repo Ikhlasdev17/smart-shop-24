@@ -25,7 +25,8 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
     flex: "",
     role: "saller",
     pincode: null,
-    avatar: null
+    avatar: null,
+    branch_id: null
   })
   const [copied, setCopied] = useState(false)
   const { t } = useTranslation()
@@ -33,6 +34,7 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
   const roles = [
     {value: 'saller', label: t('seller')},
     {value: 'admin', label: t('admin')},
+    {value: 'warehouseManager', label: t('warehouseManager')},
   ]
 
   const [pinCode, setPinCode] = useState(null)
@@ -40,7 +42,7 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
   const [photoUploaded, setPhotoUploaded] = useState("default") 
 
   const [generating, setGenerating] = useState(false)
-
+  const [branches, setBranches] = useState([])
 
   useEffect(() => { 
 
@@ -54,7 +56,8 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
           flex: "",
           role: "saller",
           pincode: null,
-          avatar: null
+          avatar: null,
+          branch_id: null
         })
         break;
       case 'update':
@@ -73,7 +76,8 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
           password: "1111",
           role: currentSallary.role,
           pincode: pinCode,
-          avatar: currentSallary.avatar
+          avatar: currentSallary.avatar,
+          branch_id: currentSallary.branch_id
         })
         break;
       case 'change_all_salary':
@@ -136,7 +140,9 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
               flex: "",
               role: "saller",
               pincode: null,
-              avatar: null
+              avatar: null,
+              branch_id: null
+              
           })
 
           generatePincode()
@@ -261,6 +267,19 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
 
 
 
+  useEffect(() => {
+    const fetchBranches = async () => {
+      const response = await
+      axios.get(`
+        ${URL}/api/branches`, setToken())
+
+      if (response.status === 200) {
+        setBranches(response.data.payload)
+      }
+      }
+    fetchBranches()
+  }, [])
+
 
  
   return (
@@ -309,6 +328,16 @@ const   Content = ({ open, setRefresh, setOpen, modalType = 'add', currentSallar
               ))}
             </Select>
         </Form.Item> }
+
+        <Form.Item label={t('branch_name')} required>
+            <Select 
+              placeholder={t("branch_name")} 
+              className="form__input" value={user.branch_id} onChange={e => setUser({...user, branch_id: e})}required>
+              {branches?.map(item => (
+                <Select.Option value={item.id}>{item.name}</Select.Option>
+              ))}
+            </Select>
+        </Form.Item>
 
         {modalType === 'add' && <Form.Item label={t('lavozim_tanlash')} required>
             <Select className="form__input" value={user.role} onChange={e => setUser({...user, role: e})}required>

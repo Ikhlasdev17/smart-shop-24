@@ -38,6 +38,9 @@ import ProductionBasket from "../../Pages/Production/Basket/Basket";
 import HistoryProduction from "../../Pages/Production/HistoryProduction/HistoryProduction";
 import Calculator from "../../Pages/Production/Calculator/Calculator";
 import Branches from "../../Pages/Branches/Branches";
+import BranchToBranch from "../../Pages/BranchToBranch/BranchToBranch";
+import BranchToHistory from "../../Pages/BranchToHistory/BranchToHistory";
+import BranchToRequest from "../../Pages/BranchToRequest/BranchToRequest";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -120,11 +123,14 @@ const Wrapper = () => {
               <Route path={"/consumptions/*"} element={<Consumptions />} />
               <Route path={"/operations/client"} element={<Baskets />} />
               <Route path={"/operations/offer"} element={<OrderWarehouse />} />
+              <Route path={"/operations/branch_to_branch"} element={<BranchToBranch />} />
               <Route path={"/finans/valutes"} element={<Valutes />} />  
               <Route path={"/operations/return"} element={<ReturnOrder />} />  
               <Route path="/casheir" element={<Casheir />} />
               <Route path={"/profile"} element={<Profile />} />
               <Route path={"/branches"} element={<Branches />} />
+              <Route path={"/branchtohistory"} element={<BranchToHistory />} />
+              <Route path={"/operations/branchtorequest"} element={<BranchToRequest />} />
               {/* <Route path={"/ingredients"} element={<Ingredients />} /> */}
               {/* <Route path="/production/order_ingredient" element={<OrderIngredient />} /> */}
               {/* <Route path="/add_product" element={<IngredientProduct />} /> */}

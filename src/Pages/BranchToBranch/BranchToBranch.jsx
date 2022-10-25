@@ -6,7 +6,7 @@ import Zoom from 'react-medium-image-zoom';
 import { useTranslation } from 'react-i18next';
 import { DebounceInput } from 'react-debounce-input';
 
-const ReturnOrder = () => {
+const BranchToBranch = () => {
     const [orders, setOrders] = useState([])
     const [fetching, setFetching] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -19,12 +19,8 @@ const ReturnOrder = () => {
     const [page, setPage] = useState(1);
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [branches, setBranches] = useState([])
-    const [returnData, setReturnData] = useState({
-      branch_id: branches[0]?.id,
-      to_branch_id: branches[0]?.id,
-      type: "",
-      description: "",
-    })
+    const [branch_id, setBranch_id] = useState(JSON.parse(localStorage.getItem("user"))?.branch?.id || "")
+    const [to_branch_id, setToBranchId] = useState("")
     const [sending, setSending] = useState(false)
 
 
@@ -35,9 +31,7 @@ const ReturnOrder = () => {
           ${URL}/api/branches`, setToken())
 
         if (response.status === 200) {
-          setBranches(response.data.payload)
-          setReturnData({ ...returnData, branch_id: response.data.payload[0]?.id, to_branch_id: response.data.payload[0]?.id })
-          
+          setBranches(response.data.payload)        
         }
         }
       fetchBranches()
@@ -47,7 +41,7 @@ const ReturnOrder = () => {
     useEffect(() =>{
         setLoading(true)
         axios.get(
-          `${URL}/api/products?search=${search}&page=${page}&branch_id=${returnData?.branch_id}`,
+          `${URL}/api/products?search=${search}&page=${page}&branch_id=${branch_id}`,
           setToken()
         )
         .then(res => {
@@ -56,7 +50,7 @@ const ReturnOrder = () => {
             setLastPage(res.data.payload.last_page)
             setPerPage(res.data.payload.per_page)
         })
-    }, [fetching, search, page, returnData?.branch_id])
+    }, [fetching, search, page, branch_id])
 
     const dataSource = [];
 
@@ -103,30 +97,18 @@ const ReturnOrder = () => {
     }, [dataForReturn])
 
     useEffect(() => {
-      setReturnData({
-        ...returnData,
-        type: "",
-        description: "",
-      })
+      setToBranchId("")
     }, [modalIsOpen])
-
-    useEffect(() => {
-      setData([])
-    }, [returnData?.branch_id])
+ 
 
     const sendToReturn = () => {
         setSending(true)
-        axios.post(`${URL}/api/warehouse/return`, {...returnData, data: dataForReturn}, setToken())
+        axios.post(`${URL}/api/warehouse/toBranch`, {products: dataForReturn, branch_id: to_branch_id }, setToken())
         .then(res => {
             message.success(t('muaffaqiyatli'))
             setFetching(!fetching)
             setData([])
-            setReturnData({
-              branch_id: branches[0]?.id || "",
-              to_branch_id: branches[0]?.id || "",
-              type: "return",
-              description: "",
-            })
+            setToBranchId("")
             setModalIsOpen(false)
         })
         .finally(() => setSending(false))
@@ -174,10 +156,9 @@ const ReturnOrder = () => {
     }
   ];
 
-  console.info(branches?.find((item) => item.id === returnData?.branch_id));
     return ( 
         <div className="section main-page">
-      <h1 className="heading">{t('return')}</h1>
+      <h1 className="heading">{t('branch_to_branch')}</h1>
 
       {
         modalIsOpen ? (
@@ -195,36 +176,20 @@ const ReturnOrder = () => {
                 }
               </Select>
             </Form.Item>  */}
-            {/* <Form.Item required label={t('to_branch')}>
+            <Form.Item required label={t('to_branch')}>
               <Select 
                 required 
                 className='form__input' 
-                onChange={e => setReturnData({ ...returnData, to_branch_id: e })} value={returnData.to_branch_id}>
+                onChange={e => setToBranchId(e)} 
+                value={to_branch_id}
+                placeholder={"salom"}
+                >
                 {
-                  branches?.map((item) => (
+                  branches?.filter(item => item.id !== branch_id)?.map((item) => (
                     <Select.Option value={item?.id}>{item?.name}</Select.Option>
                   ))
                 }
               </Select>
-            </Form.Item>  */}
-            <Form.Item required label={t('type_return')}>
-              <Select 
-                required 
-                className='form__input' 
-                onChange={e => setReturnData({ ...returnData, type: e })} 
-                placeholder={t("type_return")}
-                >
-                    {
-                      branches?.find((item) => item.id === returnData?.branch_id)?.is_main ? (
-                        <Select.Option value={"return"}>{t("return")}</Select.Option>
-                      ) : null
-                    }
-                    <Select.Option value={"defect"}>{t("defect")}</Select.Option>
-                    <Select.Option value={"gift"}>{t("gift")}</Select.Option>
-              </Select>
-            </Form.Item> 
-            <Form.Item required label={t('description')}>
-              <textarea value={returnData.description} onChange={e => setReturnData({ ...returnData, description: e.target.value })} className="form__input" style={{padding: "10px",height:"150px"}} placeholder={t("description")}></textarea>
             </Form.Item> 
             <Spin spinning={sending}>
             <Button htmlType='submit' className='btn btn-primary'>{t("save")}</Button>
@@ -243,11 +208,11 @@ const ReturnOrder = () => {
                 onChange={(e) => {
                   setPage(1)
                   setSearch(e.target.value)}} />
-              <Select 
+              {/* <Select 
                 required 
                 className='form__input wdith_3' 
-                onChange={e => setReturnData({ ...returnData, branch_id: e, to_branch_id: e })} 
-                value={returnData.branch_id}
+                onChange={e => setBranch_id(e)} 
+                value={branch_id}
                 placeholder={t("branch")}
                 >
                 {
@@ -255,7 +220,7 @@ const ReturnOrder = () => {
                     <Select.Option value={item?.id}>{item?.name}</Select.Option>
                   ))
                 }
-              </Select>
+              </Select> */}
               </div>
               <Button disabled={btnDisabled} onClick={() =>{
                 setModalIsOpen(true)
@@ -287,4 +252,4 @@ const ReturnOrder = () => {
 }
 
 
-export default ReturnOrder
+export default BranchToBranch

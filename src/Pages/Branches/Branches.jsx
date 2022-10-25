@@ -96,7 +96,7 @@ const Branches = () => {
       key: 'key',
     },
     {
-      title: t("actions"),
+      title: t("action"),
       dataIndex: "actions",
       key: "actions"
     }

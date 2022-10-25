@@ -61,6 +61,18 @@
                     "label": "Buyırtpanı qaytarıw",
                     "path": "/operations/return",
                     "icon": "bx bx-cart-alt"
+                },
+                {
+                    "id": "subitem20",
+                    "label": "Filialdan filialg'a",
+                    "path": "/operations/branch_to_branch",
+                    "icon": "bx bx-transfer"
+                },
+                {
+                    "id": "subitem21",
+                    "label": "Filial o'tkermelerin qabillaw.",
+                    "path": "/operations/branchtorequest",
+                    "icon": "bx bx-transfer"
                 }
             ]
         },
@@ -122,6 +134,11 @@
                     "label": "Jaramsız ónimler",
                     "path": "/warehouse/defect",
                     "icon": "bx bx-cart-alt"
+                },{
+                    "id":"subitem90",
+                    "label": "Filial o'tkermeleri tariyxi",
+                    "path": "/branchtohistory",
+                    "icon": "bx bx-cart-alt"
                 }
             ]
         },
@@ -175,7 +192,7 @@
                     "icon": "bx bx-cart-alt"
                 },
                 {
-                    "id": "sub   item16",
+                    "id": "subitem16",
                     "label": "Kalkulyator",
                     "path": "/production/calculator",
                     "icon": "bx bx-cart-alt"
@@ -367,5 +384,16 @@
     "update_branch":"Filialdi jan'alaw",
     "branch_name":"Filial ati",
     "main_branch":"Tiykarg'i filial",
-    "already_branch":"Bunday filial jaratilg'an!"
+    "already_branch":"Bunday filial jaratilg'an!",
+    "from_branch":"Filialdan",
+    "to_branch":"Filialg'a",
+    "type_return":"Qaytariw tu'ri",
+    "gift":"Sawg'a",
+    "branch_to_branch":"Filialdan filialga",
+    "warehouseManager":"Telek menejeri",
+    "taken":"Qabil qiling'an",
+    "branchtohistory":"Filialdan filialg'a o'tkermeler tariyxi",
+    "status":"Status",
+    "branchtoRequest":"Filialdan filialg'a o'tkermeler sorawlari",
+    "take":"Qabillap aliw"
 }

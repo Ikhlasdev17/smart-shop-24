@@ -61,6 +61,18 @@
           "label": "Buyurtmani qaytarish",
           "path": "/operations/return",
           "icon": "bx bx-cart-alt"
+        },
+        {
+            "id": "subitem20",
+            "label": "Filialdan filialga",
+            "path": "/operations/branch_to_branch",
+            "icon": "bx bx-transfer"
+        },
+        {
+            "id": "subitem21",
+            "label": "Filial o'tkazmalari sorovlari.",
+            "path": "/operations/branchtorequest",
+            "icon": "bx bx-transfer"
         }
       ]
     },
@@ -122,7 +134,12 @@
           "label": "Yaroqsiz mahsulotlar",
           "path": "/warehouse/defect",
           "icon": "bx bx-cart-alt"
-        }
+        },{
+          "id":"subitem90",
+          "label": "Filial o'tkazmalari tarixi",
+          "path": "/branchtohistory",
+          "icon": "bx bx-cart-alt"
+      }
       ]
     },
     {
@@ -382,5 +399,18 @@
   "update_branch":"Filialni yangilash",
   "branch_name":"Filial nomi",
   "main_branch":"Asosiy filial",
-  "already_branch":"Bunday filial allaqachon mavjud!"
+  "already_branch":"Bunday filial allaqachon mavjud!",
+  "from_branch":"Filialdan",
+    "to_branch":"Filialga",
+    "type_return":"Qaytarish turi",
+    "gift":"Sovg'a",
+    "branch_to_branch":"Filialdan filialg'a",
+    "warehouseManager":"Sklad menedjeri",
+    "taken":"Qabul qilingan",
+    "branchtohistory":"Filialdan filialga o'tkazmalar tarixi",
+    "status":"Status",
+    "type":"Turi",
+    "branchtoRequest":"Filialdan filialga o'tkazmalar so'rovi",
+    "take":"Qabul qilish"
+    
 }

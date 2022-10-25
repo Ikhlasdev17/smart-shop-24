@@ -59,6 +59,18 @@
                     "label": "Возврат транзакции",
                     "path": "/operations/return",
                     "icon": "bx bx-cart-alt"
+                },
+                {
+                    "id": "subitem20",
+                    "label": "Филиал в филиал",
+                    "path": "/operations/branch_to_branch",
+                    "icon": "bx bx-transfer"
+                },
+                {
+                    "id": "subitem21",
+                    "label": "Принятие переводов.",
+                    "path": "/operations/branchtorequest",
+                    "icon": "bx bx-transfer"
                 }
             ]
         },
@@ -114,6 +126,11 @@
                     "id":"subitem9",
                     "label": "Бракованные товары",
                     "path": "/warehouse/defect",
+                    "icon": "bx bx-cart-alt"
+                },{
+                    "id":"subitem90",
+                    "label": "История транзакций филиала",
+                    "path": "/branchtohistory",
                     "icon": "bx bx-cart-alt"
                 }
             ]
@@ -378,7 +395,18 @@
   "update_branch":"Обновить ветку",
   "branch_name":"Название филиала",
   "main_branch":"Главный филиал",
-  "already_branch":"Такая ветка уже создана!"
+  "already_branch":"Такая ветка уже создана!",
+  "from_branch":"Из филиала",
+  "to_branch":"В филиал",
+  "type_return":"Тип возврата",
+  "gift":"Подарок",
+  "branch_to_branch":"Филиал в филиал",
+  "warehouseManager":"Менеджер склада",
+  "taken":"Принято",
+  "branchtohistory":"История транзакций филиала",
+  "status":"Статус",
+  "branchtoRequest":"Переводы из филиала в филиал",
+  "take":"Принятие"
 
 }
 
