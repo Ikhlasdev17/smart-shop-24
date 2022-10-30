@@ -126,12 +126,7 @@ const BranchToRequest = () => {
       title: t("warehouseManager"),
       dataIndex: "employee",
       key: "key",
-    },
-    // {
-    //   title: t("description"),
-    //   dataIndex: "descr",
-    //   key: "key",
-    // },
+    }, 
     {
       title: t("type_return"),
       dataIndex: "type",
