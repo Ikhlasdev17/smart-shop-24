@@ -54,25 +54,29 @@
                     "id": "subitem2",
                     "label": "Buyırtpa beriw",
                     "path": "/operations/offer",
-                    "icon": "bx bx-cart-alt"
+                    "icon": "bx bx-cart-alt",
+                    "is_main":true
                 },
                 {
                     "id": "subitem3",
                     "label": "Buyırtpanı qaytarıw",
                     "path": "/operations/return",
-                    "icon": "bx bx-cart-alt"
+                    "icon": "bx bx-cart-alt",
+                    "is_main":true
                 },
                 {
                     "id": "subitem20",
                     "label": "Filialdan filialg'a",
                     "path": "/operations/branch_to_branch",
-                    "icon": "bx bx-transfer"
+                    "icon": "bx bx-transfer",
+                    "role": ["warehouseManager","admin","seller"]
                 },
                 {
                     "id": "subitem21",
                     "label": "Filial o'tkermelerin qabillaw.",
                     "path": "/operations/branchtorequest",
-                    "icon": "bx bx-transfer"
+                    "icon": "bx bx-transfer",
+                    "role": ["warehouseManager","admin","seller"]
                 }
             ]
         },
@@ -87,21 +91,21 @@
                     "label": "Ǵárejetler",
                     "path": "/consumptions/consumption",
                     "icon": "bx bx-cart-alt",
-                    "role": "ceo"
+                    "role": ["ceo", "warehouseManager"]
                 },
                 {
                     "id": "subitem5",
                     "label": "Tabıslar",
                     "path": "/consumptions/income",
                     "icon": "bx bx-cart-alt",
-                    "role": "ceo"
+                    "role": ["ceo", "warehouseManager"]
                 },
                 {
                     "id": "subitem6",
                     "label": "Sap payda",
                     "path": "/casheir",
                     "icon": "bx bx-cart-alt",
-                    "role": "ceo"
+                    "role": ["ceo", "warehouseManager"]
                 },
                 {
                     "id": "subitem15",
