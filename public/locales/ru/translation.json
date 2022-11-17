@@ -85,21 +85,21 @@
             "icon": "bx-money-withdraw",
             "submenu": [
                 {
-                    "id": "subitem4",
-                    "label": "Расход",
-                    "path": "/consumptions/consumption",
-                    "icon": "bx bx-cart-alt",
-                    "role": ["ceo", "warehouseManager"]
-                },{
                     "id": "subitem5",
-                    "label": "Даход",
-                    "path": "/consumptions/income",
+                    "label": "Доходы и расходы",
+                    "path": "/consumptions",
                     "icon": "bx bx-cart-alt",
                     "role": ["ceo", "warehouseManager"]
                 },{
                     "id": "subitem6",
-                    "label": "Чистая прибыль",
+                    "label": "Касса",
                     "path": "/casheir",
+                    "icon": "bx bx-cart-alt",
+                    "role": ["ceo", "warehouseManager"]
+                },{
+                    "id": "subitem44",
+                    "label": "Чистая прибыль",
+                    "path": "/profit",
                     "icon": "bx bx-cart-alt",
                     "role": ["ceo", "warehouseManager"]
                 },{
@@ -410,7 +410,10 @@
   "branchtohistory":"История транзакций филиала",
   "status":"Статус",
   "branchtoRequest":"Переводы из филиала в филиал",
-  "take":"Принятие"
+  "take":"Принятие",
+  "all_branches":"Все филиалы",
+  "con__inc":"Приход или расход",
+  "casheir":"Касса"
 
 }
 

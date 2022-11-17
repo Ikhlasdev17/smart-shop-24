@@ -2,29 +2,25 @@ import { Select,DatePicker, Table, Skeleton, Input } from 'antd'
 import React, { useState, useEffect } from 'react'
 
 import axios from 'axios';
-import { fetchingProducts, fetchedProducts } from '../../redux/productsSlice';
 
 import '../Main/Main.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { setToken, URL } from '../../assets/api/URL'
 import 'react-medium-image-zoom/dist/styles.css'
 
-import moment from 'moment'
 
 import { useTranslation } from 'react-i18next';
 
-const { RangePicker } = DatePicker;
 const {Option} = Select;
 
-const Casheir = () => {
+const Profit = () => {
   const dispatch = useDispatch()
-  const [ casheir, setCasheir ] = useState([])
-  const now = Date.now()
-  const [from, setFrom] = useState('2020-12-10')
-  const [to, setTo] = useState(moment(now).format('YYYY-MM-DD')) 
+  const [ casheir, setCasheir ] = useState([]) 
   const [loading, setLoading] = useState(true)
   const {t} = useTranslation()
+  const [branches, setBranches] = useState([])
+  const [branch_id, setBranch_id] = useState("")
 
 
   const months = [
@@ -43,51 +39,51 @@ const Casheir = () => {
   ]
 
   useEffect(async () => {
-    dispatch(fetchingProducts());
 
     setLoading(true)
 
-    const response = await axios.get(`${URL}/api/cashier/monthly?from=${from}&to=${to}`, setToken())
+    const response = await axios.get(`${URL}/api/profit?branch_id=${branch_id}`, setToken())
 
     if (response.status === 200) {
       setCasheir(response.data.payload)
       setLoading(false)
     }
 
-  } ,[from, to])
+    
+
+  } ,[branch_id])
+
+  useEffect(() => {
+    axios
+      .get(`${URL}/api/branches`, setToken())
+      .then((res) => setBranches(res.data.payload))
+  }, [])
 
 
   const dataSource = [];
 
   casheir.length > 0 && casheir?.map(item => {
     dataSource.push({
-      key: item?.product_id,
+      key: item?.category_id,
       oy:<div className="table-title">
-        <h2>{months.filter(m => m.id === item?.month)[0].name}</h2>  
-        <p>{item.year}</p>
+        <h2>{item?.category_name}</h2>   
         </div>,
-      card: item.card !== null && item.card?.toLocaleString(),
-      cash: item.cash !== null && item.cash?.toLocaleString(),
-      sof_foyda: item.profit !== null && item.profit?.toLocaleString()
+      card: item.amount?.toLocaleString(),
+      sof_foyda: item?.profit?.toLocaleString(),
     })
   })
   
   const columns = [
     {
-      title: t('oy'),
+      title: t('categories'),
       dataIndex: 'oy',
       key: 'key',
     },
     {
-      title: t('card'),
+      title: t('total_income'),
       dataIndex: 'card',
       key: 'key',
-    },
-    {
-      title: t('cash'),
-      dataIndex: 'cash',
-      key: 'key',
-    },
+    }, 
     {
       title: t('sof_foyda'),
       dataIndex: 'sof_foyda',
@@ -99,13 +95,13 @@ const Casheir = () => {
   return (
     
     <div className="section main-page">
-      <h1 className="heading">{t('casheir')}</h1>
+      <h1 className="heading">{t('sof_foyda')}</h1>
 
       <div className="content">
           <div className="content-top">  
 
             <div className="content-top__group">
-
+{/* 
               <DatePicker
               clearIcon={false}
                 className="content__range-picker content-top__input form__input pl-1"
@@ -125,8 +121,21 @@ const Casheir = () => {
                   setTo(string)
                 } }
                 value={moment(to)}
-                />
-                </div>
+                />*/}
+                <Select
+                  className="form__input content-select content-top__input wdith_3"
+                  showSearch
+                  placeholder={t("all_branches")}
+                  optionFilterProp="children" 
+                  onChange={(e) => setBranch_id(e)}
+                  value={branch_id}
+                >
+                  <Option value={""}>{t("all_branches")}</Option>
+                  {branches?.map((branch) => {
+                    return <Select.Option value={branch.id}>{branch.name}</Select.Option>;
+                  })}
+                </Select>
+                </div> 
 
              
           </div>
@@ -144,4 +153,4 @@ const Casheir = () => {
   )
 }
 
-export default Casheir
+export default Profit

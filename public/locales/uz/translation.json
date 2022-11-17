@@ -85,25 +85,25 @@
       "label": "Moliya",
       "path": "/finance",
       "icon": "bx-money-withdraw",
-      "submenu": [
-        {
-          "id": "subitem4",
-          "label": "Xarajatlar",
-          "path": "/consumptions/consumption",
-          "icon": "bx bx-cart-alt",
-          "role": ["ceo", "warehouseManager"]
-        },
+      "submenu": [ 
         {
           "id": "subitem5",
-          "label": "Kirimlar",
-          "path": "/consumptions/income",
+          "label": "Kirimlar va xarajatlar",
+          "path": "/consumptions",
           "icon": "bx bx-cart-alt",
           "role": ["ceo", "warehouseManager"]
         },
         {
           "id": "subitem6",
-          "label": "Sof foyda",
+          "label": "Kassa",
           "path": "/casheir",
+          "icon": "bx bx-cart-alt",
+          "role": ["ceo", "warehouseManager"]
+        },
+        {
+          "id": "subitem44",
+          "label": "Sof foyda",
+          "path": "/profit",
           "icon": "bx bx-cart-alt",
           "role": ["ceo", "warehouseManager"]
         },
@@ -415,6 +415,9 @@
     "status":"Status",
     "type":"Turi",
     "branchtoRequest":"Filialdan filialga o'tkazmalar so'rovi",
-    "take":"Qabul qilish"
+    "take":"Qabul qilish",
+    "all_branches":"Barcha filiallar",
+    "con__inc":"Kirim yoki xarajat",
+    "casheir":"Kassa"
     
 }

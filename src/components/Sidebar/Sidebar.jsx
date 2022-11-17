@@ -19,13 +19,10 @@ const Sidebar = ({ windowWidth, collapsed, setCollapsed }) => {
       }
     }
   })
-
-
   useEffect(() => {
     setSelected(pathName.pathname)
   }, [pathName])
   const sidebarItems = t('sidebar__items', { returnObjects: true }) || []
-
   return (
     <Menu mode="inline" className="sidebar-menu" onClick={ () => {
       windowWidth < 1200 ? setCollapsed(!collapsed) : console.log('')
@@ -55,7 +52,7 @@ const Sidebar = ({ windowWidth, collapsed, setCollapsed }) => {
                 className={ `menu-item` }>
                 { item.submenu.map((subitem) => {
                   return subitem?.is_main ? (
-                    user.branch.is_main === subitem?.is_main && (
+                    user?.branch?.is_main === subitem?.is_main && (
                       subitem.role ? 
                       subitem.role.find(x => x === localStorage.getItem('role')) 
                       && (
@@ -98,7 +95,7 @@ const Sidebar = ({ windowWidth, collapsed, setCollapsed }) => {
               <Menu.SubMenu key={ item.id } icon={ <i className={ `bx ${item.icon}` }></i> } title={ item.label } className={ `menu-item` }>
                 { item.submenu.map((subitem) => {
                   return subitem?.is_main ? (
-                    user.branch.is_main === subitem?.is_main && (
+                    user?.branch?.is_main === subitem?.is_main && (
                       subitem.role ? 
                       subitem.role.find(x => x === localStorage.getItem('role')) 
                       && (
@@ -138,8 +135,5 @@ const Sidebar = ({ windowWidth, collapsed, setCollapsed }) => {
       ) }
     </Menu>
   )
-
-
 }
-
 export default Sidebar

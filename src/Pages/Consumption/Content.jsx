@@ -10,7 +10,7 @@ import moment from 'moment';
 
 import { useTranslation } from 'react-i18next';
 
-const Content = ({ open, type, categories, setOpen, setRefresh, refresh }) => {
+const Content = ({ open, type = null, categories, setOpen, setRefresh, refresh }) => {
 
     const dispatch = useDispatch()
 
@@ -79,6 +79,13 @@ const Content = ({ open, type, categories, setOpen, setRefresh, refresh }) => {
 
   return (
     <Form layout={"vertical"} onFinish={handleFinish}> 
+      <Form.Item label={t('con__inc')}>
+        <Select  className="form__input" value={formData.type} onChange={(e) =>  setFormData({...formData, type: e})} required>
+            <Select.Option value={"income"}>{t('kirim')}</Select.Option>
+            <Select.Option value="consumption">{t('consumption')}</Select.Option>
+        </Select>
+      </Form.Item>
+
       <Form.Item label={t('kategoriya_tanlash')}>
         <Select className="form__input" value={formData.category_id} onChange={(e) =>  setFormData({...formData, category_id: e})} required>
             {categories?.map(item => (
@@ -86,7 +93,6 @@ const Content = ({ open, type, categories, setOpen, setRefresh, refresh }) => {
             ))}
         </Select>
       </Form.Item>
-
       
       <Form.Item label={t('kimga')}>
         <Input value={formData.whom} placeholder={t('kimga')} className="form__input" onChange={(e) => setFormData({...formData, whom: e.target.value})} required/>

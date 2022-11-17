@@ -85,28 +85,27 @@
             "label": "Finans",
             "path": "/finance",
             "icon": "bx-money-withdraw",
-            "submenu": [
-                {
-                    "id": "subitem4",
-                    "label": "Ǵárejetler",
-                    "path": "/consumptions/consumption",
-                    "icon": "bx bx-cart-alt",
-                    "role": ["ceo", "warehouseManager"]
-                },
+            "submenu": [ 
                 {
                     "id": "subitem5",
-                    "label": "Tabıslar",
-                    "path": "/consumptions/income",
+                    "label": "Tabıslar ha'm g'árejetler",
+                    "path": "/consumptions",
                     "icon": "bx bx-cart-alt",
                     "role": ["ceo", "warehouseManager"]
                 },
                 {
                     "id": "subitem6",
-                    "label": "Sap payda",
+                    "label": "Kassa",
                     "path": "/casheir",
                     "icon": "bx bx-cart-alt",
                     "role": ["ceo", "warehouseManager"]
-                },
+                },{
+                    "id": "subitem44",
+                    "label": "Sap payda",
+                    "path": "/profit",
+                    "icon": "bx bx-cart-alt",
+                    "role": ["ceo", "warehouseManager"]
+                  },
                 {
                     "id": "subitem15",
                     "label": "Valyutalar",
@@ -399,5 +398,8 @@
     "branchtohistory":"Filialdan filialg'a o'tkermeler tariyxi",
     "status":"Status",
     "branchtoRequest":"Filialdan filialg'a o'tkermeler sorawlari",
-    "take":"Qabillap aliw"
+    "take":"Qabillap aliw",
+    "all_branches":"Ba'rshe filiallar",
+    "con__inc":"Kirim yaki g'arejet",
+    "casheir":"Kassa"
 }
