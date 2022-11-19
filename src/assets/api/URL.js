@@ -5,11 +5,11 @@
 export let URL = "https://smartshop24.my-project.site"
  
 
-if (process.env.NODE_ENV === "production") {
-    URL = window.location.origin
-} else {
-    URL = 'https://smartshop24.my-project.site'
-}
+// if (process.env.NODE_ENV === "production") {
+//     URL = window.location.origin
+// } else {
+//     URL = 'https://smartshop24.my-project.site'
+// }
 
 export const setToken = () => ({
     headers: {
