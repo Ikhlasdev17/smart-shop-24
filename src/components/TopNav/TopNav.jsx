@@ -13,6 +13,11 @@ import i18next from 'i18next';
 
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { setToken, URL } from '../../assets/api/URL';
+import { changeBranch } from '../../redux/orderSlice';
+import { useSelector } from 'react-redux';
 
 const { Header } = Layout;
 
@@ -30,18 +35,26 @@ const languages = [
 
 const TopNav = ({ collapsed, setCollapsed, width, setLogged }) => {
   const dispatch = useDispatch()
+  const { branch_id } = useSelector(state => state.orderReducer)
   const [currentLang, setCurrentLang] = useState(document.cookie.split('=')[1])
   const [currentLangLabel, setCurrentLabel] = useState(languages.filter(item => item.lang === currentLang)[0] ? languages.filter(item => item.lang === currentLang)[0].label : "O'zbekcha")
-
+  const [allBranches, setAllBranches] = useState([])
   const changeLang = (lang, label) => {
     i18next.changeLanguage(lang)
     setCurrentLang(lang)
     setCurrentLabel(label)
   }
-
   const { t } = useTranslation()
-
   const avatar = JSON.parse(localStorage.getItem('user'))?.avatar
+
+
+  useEffect(() => {
+    axios.get(`${URL}/api/branches`, setToken())
+      .then((res) => {
+        setAllBranches(res.data.payload)
+        dispatch(changeBranch(res.data.payload[0]?.id))
+      })
+  }, [])
  
   const brandMenu = (
     <Menu>
@@ -56,6 +69,18 @@ const TopNav = ({ collapsed, setCollapsed, width, setLogged }) => {
       </Menu.Item>
     </Menu>
   );
+
+  const branchesMenu = (
+    <Menu>
+      {allBranches?.map((item) => (
+        <Menu.Item key={item.id} onClick={() => dispatch(changeBranch(item.id))}>
+          <button className="dropdown-btn" disabled={branch_id === item.id}> 
+          {item.name}  
+          </button>
+      </Menu.Item>
+      ))}
+    </Menu>
+  )
   
   
   const languageMenu = (
@@ -74,7 +99,6 @@ const TopNav = ({ collapsed, setCollapsed, width, setLogged }) => {
   );
 
 
-  
 
   const profileMenu = (
     <Menu>
@@ -116,6 +140,16 @@ const TopNav = ({ collapsed, setCollapsed, width, setLogged }) => {
       <i className='bx bx-menu'></i></Button>
       </div>
       <div className="topnav__right-menu">
+        <Dropdown overlay={branchesMenu} placement="bottomLeft" className="dropdown">
+          <span >
+          <i class='bx bx-git-branch'></i>
+            <span className='dropdown__text'>
+            {
+              allBranches?.find(item => item.id === branch_id)?.name || t("branch")
+            }
+            </span>
+          </span>
+        </Dropdown>
         <Dropdown overlay={brandMenu} placement="bottomLeft" className="dropdown">
           <span >
             <img src={brandIcon} alt="" />

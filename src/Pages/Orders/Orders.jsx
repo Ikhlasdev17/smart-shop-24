@@ -329,7 +329,7 @@ const Orders = () => {
       </Modal>
 
       <div className="top__elements">
-      <h1 className="heading">{t('offers')}</h1>
+      <h1 className="heading mb-4">{t('offers')}</h1>
 
       <div className="top__elements-right">
         <span><strong>{t('cash')}:</strong> {amount?.cash !== null && amount?.cash?.toLocaleString()}</span>

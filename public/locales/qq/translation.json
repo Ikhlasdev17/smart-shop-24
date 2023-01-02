@@ -7,13 +7,32 @@
             "path": "/",
             "icon": "bx-grid-alt",
             "groupTitle": "Ulıwma"
+        }, 
+        {
+            "id": 888,
+            "label": "Satiwlar",
+            "icon": "bx-basket",
+            "groupTitle": "Menyu",
+            "submenu": [
+                {
+                    "id": "subitem44",
+                    "label": "Jan'a satiw",
+                    "path": "/neworder",
+                    "icon": "bx bx-basket"
+                },
+                {
+                    "id": "subitem45",
+                    "label": "Ba'rshe satiwlar",
+                    "path": "/orders",
+                    "icon": "bx bx-list-ul"
+                }
+            ]
         },
         {
             "id": 2,
             "label": "Klientler",
             "path": "/clients",
-            "icon": "bxs-user",
-            "groupTitle": "Menyu"
+            "icon": "bxs-user"
         },
         {
             "id": 3,
@@ -401,5 +420,18 @@
     "take":"Qabillap aliw",
     "all_branches":"Ba'rshe filiallar",
     "con__inc":"Kirim yaki g'arejet",
-    "casheir":"Kassa"
+    "casheir":"Kassa",
+    "new_order": "Jan'a satiw",
+    "all_orders":"Ba'rshe satiwlar",
+    "find_product_by_name":"O'nim ati arqali izlew...",
+    "scan_bar_code":"O'nim shtrix kodin skannerlen'.",
+    "basket_products":"Sebette",
+    "confirm":"Tastiyqlaw",
+    "number_or_name":"Telefon nomeri yaki ati",
+    "product_count_not":"O'nim sani jeterli emes!",
+    "max_count":"Maksimum o'nim sani",
+    "scan_please":"O'nim shtrix kodin skannerlen'",
+    "search_client":"Klient ati ya'ki telefon nomerin kiritin'.",
+    "remaining_sum":"To'leniwi kerek summa"
+    
 }

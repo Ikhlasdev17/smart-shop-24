@@ -85,7 +85,7 @@ const Profile = () => {
 
   return (
     <div className="section">
-      <h1 className="heading">{t("profile")}</h1>
+      <h1 className="heading mb-4">{t("profile")}</h1>
       <div className="content">
         <div className="content-top"></div>
 

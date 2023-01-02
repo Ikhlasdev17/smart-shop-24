@@ -421,7 +421,7 @@ const Products = () => {
         </Modal>
       ) : null}
 
-      <h1 className="heading">{t("products")}</h1>
+      <h1 className="heading mb-4">{t("products")}</h1>
 
       <div className="content">
         <div className="content-top">

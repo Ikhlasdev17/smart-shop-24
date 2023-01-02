@@ -94,7 +94,7 @@ const Casheir = () => {
 
   return (
     <div className="section main-page">
-      <h1 className="heading">{t("casheir")}</h1>
+      <h1 className="heading mb-4">{t("casheir")}</h1>
 
       <div className="content">
         <div className="content-top">

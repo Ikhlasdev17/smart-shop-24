@@ -64,7 +64,7 @@ const Valutes = () => {
         <Content currentValute={currentValute} setOpen={() => setOpen()} setChanged={() =>setChanged()} changed={changed} />
         </Drawer>
 
-        <h1 className="heading">{t('valyutalar')}</h1>
+        <h1 className="heading mb-4">{t('valyutalar')}</h1>
 
         <div className="content">
             <div className="content-body" >

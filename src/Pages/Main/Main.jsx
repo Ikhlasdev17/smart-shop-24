@@ -104,7 +104,7 @@ const Main = () => {
   return (
     
     <div className="section main-page">
-      <h1 className="heading">{t('main')}</h1>
+      <h1 className="heading mb-4">{t('main')}</h1>
 
       <div className="content">
           <div className="content-top">

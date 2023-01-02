@@ -164,7 +164,7 @@ const Clients = () => {
       ) : null}
 
 
-      <h1 className="heading">{t('clients')}</h1>
+      <h1 className="heading mb-4">{t('clients')}</h1>
 
       <div className="content">
           <div className="content-top">

@@ -212,7 +212,7 @@ const Ingredients = () => {
   // MAIN RETURN
   return (
     <div className="section main-page">
-      <h1 className="heading">{t("ingredients")}</h1>
+      <h1 className="heading mb-4">{t("ingredients")}</h1>
 
       <Drawer
         title={t("orders_history")}

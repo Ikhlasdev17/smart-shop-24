@@ -5,11 +5,9 @@ const initialState = {
     clientsFetchingStatus: 'default',
 }
 
-
-
 const clientSlice = createSlice({
     name: 'clients',
-    initialState ,
+    initialState,
     reducers: {
         fetchingClients: state => {
             state.clientsFetchingStatus = 'loading'

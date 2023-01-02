@@ -185,7 +185,7 @@ const Sellers = () => {
         </Modal>
       ) : null}
 
-        <h1 className="heading">{t('sellers')}</h1>
+        <h1 className="heading mb-4">{t('sellers')}</h1>
 
         <div className="content">
             <div className="content-top">

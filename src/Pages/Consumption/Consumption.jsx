@@ -121,7 +121,7 @@ const Consumptions = () => {
         <Content open={ open } setRefresh={ setRefresh } refresh={ refresh } setOpen={ () => setOpen() } categories={ categories }  />
       </Drawer>
 
-      <h1 className="heading">{ consumType === 'consumption' ? t('consumption') : t('income') }</h1>
+      <h1 className="heading mb-4">{ consumType === 'consumption' ? t('consumption') : t('income') }</h1>
 
       <div className="content">
         <div className="content-top">

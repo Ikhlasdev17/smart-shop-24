@@ -7,13 +7,33 @@
       "path": "/",
       "icon": "bx-grid-alt",
       "groupTitle": "Umumiy"
+    }, 
+    {
+        "id": 888,
+        "label": "Sotuvlar",
+        "icon": "bx-basket",
+        "groupTitle": "Menyu",
+        "submenu": [
+            {
+                "id": "subitem44",
+                "label": "Yangi sotuv",
+                "path": "/neworder",
+                "icon": "bx bx-cart-alt"
+            },
+            {
+                "id": "subitem45",
+                "label": "Barcha sotuvlar",
+                "path": "/orders",
+                "icon": "bx bx-cart-alt"
+            }
+        ]
     },
     {
       "id": 2,
       "label": "Mijozlar",
       "path": "/clients",
-      "icon": "bxs-user",
-      "groupTitle": "Menyu"
+      "icon": "bxs-user"
+      
     },
     {
       "id": 3,
@@ -418,6 +438,18 @@
     "take":"Qabul qilish",
     "all_branches":"Barcha filiallar",
     "con__inc":"Kirim yoki xarajat",
-    "casheir":"Kassa"
+    "casheir":"Kassa",
+    "new_order":"Yangi sotuv",
+    "all_orders":"Barcha sotuvlar",
+    "find_product_by_name":"Mahsulot nomi orqali qidiring...",
+    "scan_bar_code":"Mahsulot shtirx kodini skannerlang.",
+    "basket_products":"Savatchada",
+    "confirm":"Tasdiqlash",
+    "number_or_name":"Telefon raqami yoki ismi",
+    "product_count_not":"Mahsulot soni yetarli emas!",
+    "max_count":"Maksimium mahsulot soni",
+    "scan_please":"Mahsulot shtrix kodini skannerlang",
+    "search_client":"Mijoz nomi yoki telefon raqami.",
+    "remaining_sum":"To'lanishi kerak summa"
     
 }

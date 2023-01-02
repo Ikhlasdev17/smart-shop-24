@@ -205,7 +205,7 @@ const ProductionBasket = () => {
   // MAIN RETURN
   return (
     <div className="section main-page">
-      <h1 className="heading">{t("production__process")}</h1>
+      <h1 className="heading mb-4">{t("production__process")}</h1>
       <Modal
         width={780}
         visible={modalIsOpen}

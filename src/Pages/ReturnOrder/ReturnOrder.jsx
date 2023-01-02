@@ -177,7 +177,7 @@ const ReturnOrder = () => {
   console.info(branches?.find((item) => item.id === returnData?.branch_id));
     return ( 
         <div className="section main-page">
-      <h1 className="heading">{t('return')}</h1>
+      <h1 className="heading mb-4">{t('return')}</h1>
 
       {
         modalIsOpen ? (

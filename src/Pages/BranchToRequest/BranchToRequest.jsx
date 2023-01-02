@@ -177,7 +177,7 @@ const BranchToRequest = () => {
   // MAIN RETURN
   return (
     <div className="section main-page">
-      <h1 className="heading">{t("branchtoRequest")}</h1>
+      <h1 className="heading mb-4">{t("branchtoRequest")}</h1>
       <Modal
         width={780}
         visible={modalIsOpen}

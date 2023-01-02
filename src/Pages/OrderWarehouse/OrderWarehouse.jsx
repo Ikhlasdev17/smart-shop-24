@@ -298,7 +298,7 @@ const OrderWarehouse = () => {
   return (
     
     <div className="section main-page">
-      <h1 className="heading">{t('order')}</h1>
+      <h1 className="heading mb-4">{t('order')}</h1>
 
       <div className="content">
           <div className="content-top">

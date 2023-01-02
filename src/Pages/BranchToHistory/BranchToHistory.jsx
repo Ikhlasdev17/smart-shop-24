@@ -157,7 +157,7 @@ const BranchToHistory = () => {
   // MAIN RETURN
   return (
     <div className="section main-page">
-      <h1 className="heading">{t("branchtohistory")}</h1>
+      <h1 className="heading mb-4">{t("branchtohistory")}</h1>
       <Modal
         width={780}
         visible={modalIsOpen}

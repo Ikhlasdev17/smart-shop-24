@@ -84,7 +84,7 @@ const Defect = () => {
       <Drawer visible={open} onClose={() => setOpen(false)} title={t('defect')}>
         <Content currentBasket={currentBasket} />
       </Drawer>
-      <h1 className="heading">{t('defect')}</h1>
+      <h1 className="heading mb-4">{t('defect')}</h1>
 
       <div className="content">
           <div className="content-top">

@@ -7,6 +7,7 @@ import categoriesReducer from './../redux/categoriesSlice'
 import ordersReducer from './../redux/ordersSlice'
 import consumptionReducer from '../redux/consumtionSlice'
 import userReducer from '../redux/userSlice'
+import orderReducer from "../redux/orderSlice";
 
 const rootReducer = combineReducers({
     userReducer,
@@ -14,8 +15,9 @@ const rootReducer = combineReducers({
     clientsReducer,
     sellersReducer,
     categoriesReducer,
+    consumptionReducer,
     ordersReducer,
-    consumptionReducer
+    orderReducer
 })
 
 export default rootReducer

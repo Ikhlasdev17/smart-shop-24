@@ -158,7 +158,7 @@ const BranchToBranch = () => {
 
     return ( 
         <div className="section main-page">
-      <h1 className="heading">{t('branch_to_branch')}</h1>
+      <h1 className="heading mb-4">{t('branch_to_branch')}</h1>
 
       {
         modalIsOpen ? (

@@ -171,7 +171,7 @@ const LowProducts = () => {
   return (
     
     <div className="section main-page">
-      <h1 className="heading">{t('some_product')}</h1>
+      <h1 className="heading mb-4">{t('some_product')}</h1>
 
       <div className="content">
           <div className="content-top">

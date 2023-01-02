@@ -191,7 +191,7 @@ const Categories = () => {
 
 
 
-        <h1 className="heading">{ t('categories') }</h1>
+        <h1 className="heading mb-4">{ t('categories') }</h1>
 
         <div className="content">
           <div className="content-top">

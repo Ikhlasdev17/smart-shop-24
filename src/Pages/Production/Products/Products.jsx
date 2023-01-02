@@ -189,7 +189,7 @@ const IngredientProduct = () => {
   return (
     <div className="section products-page">
       <div className="top__elements">
-        <h1 className="heading">{t("products")}</h1>
+        <h1 className="heading mb-4">{t("products")}</h1>
 
         <div className="top__elements-right">
           <span>

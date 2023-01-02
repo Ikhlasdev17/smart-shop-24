@@ -95,7 +95,7 @@ const Profit = () => {
   return (
     
     <div className="section main-page">
-      <h1 className="heading">{t('sof_foyda')}</h1>
+      <h1 className="heading mb-4">{t('sof_foyda')}</h1>
 
       <div className="content">
           <div className="content-top">  

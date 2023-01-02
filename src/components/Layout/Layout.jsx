@@ -42,6 +42,7 @@ import BranchToBranch from "../../Pages/BranchToBranch/BranchToBranch";
 import BranchToHistory from "../../Pages/BranchToHistory/BranchToHistory";
 import BranchToRequest from "../../Pages/BranchToRequest/BranchToRequest";
 import Profit from "../../Pages/Profit/Profit";
+import NewOrder from "../../Pages/Order/NewOrder";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -133,6 +134,9 @@ const Wrapper = () => {
               <Route path={"/branchtohistory"} element={<BranchToHistory />} />
               <Route path={"/operations/branchtorequest"} element={<BranchToRequest />} />
               <Route path={"/profit"} element={<Profit />} />
+
+              <Route path="/neworder" element={<NewOrder />} />
+ 
               {/* <Route path={"/ingredients"} element={<Ingredients />} /> */}
               {/* <Route path="/production/order_ingredient" element={<OrderIngredient />} /> */}
               {/* <Route path="/add_product" element={<IngredientProduct />} /> */}

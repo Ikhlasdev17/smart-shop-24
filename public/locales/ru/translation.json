@@ -7,13 +7,33 @@
             "path": "/",
             "icon": "bx-grid-alt",
             "groupTitle": "Общий"
+        }, 
+        {
+            "id": 888,
+            "label": "Продажи",
+            "icon": "bx-basket",
+            "groupTitle": "Меню",
+            "submenu": [
+                {
+                    "id": "subitem44",
+                    "label": "Новые продажи",
+                    "path": "/neworder",
+                    "icon": "bx bx-basket"
+                },
+                {
+                    "id": "subitem45",
+                    "label": "Все продажи",
+                    "path": "/orders",
+                    "icon": "bx bx-list-ul"
+                }
+            ]
         },
+        
         {
             "id": "menu2",
             "label": "Клиенты",
             "path": "/clients",
-            "icon": "bxs-user",
-            "groupTitle": "Меню"
+            "icon": "bxs-user"
         },
         {
             "id": "menu3",
@@ -413,7 +433,19 @@
   "take":"Принятие",
   "all_branches":"Все филиалы",
   "con__inc":"Приход или расход",
-  "casheir":"Касса"
+  "casheir":"Касса",
+  "new_order":"Новые продажи",
+  "all_orders": "Все продажи",
+  "find_product_by_name":"Поиск по названию продукта...",
+  "scan_bar_code":"Просканируйте штрих-код товара",
+  "basket_products":"В корзине",
+  "confirm":"Подтверждать",
+  "number_or_name":"Имя или номер телефона",
+  "product_count_not":"Недостаточно продукта!",
+  "max_count":"Максимальное количество продуктов",
+  "scan_please":"Просканируйте штрих-код товара",
+  "search_client":"Имя или номер телефона.",
+  "remaining_sum":"Сумма к оплате"
 
 }
 
